@@ -11,6 +11,9 @@
 		8586F81529E5FF1300450A7E /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8586F81429E5FF1300450A7E /* NetworkRequest.swift */; };
 		8586F81729E5FF3800450A7E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8586F81629E5FF3800450A7E /* NetworkError.swift */; };
 		8586F81A29E5FFA700450A7E /* Codable+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8586F81929E5FFA700450A7E /* Codable+Extentions.swift */; };
+		8586F81E29E63D0100450A7E /* MatchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8586F81D29E63D0100450A7E /* MatchesService.swift */; };
+		8586F82029E63D9100450A7E /* MatchesEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8586F81F29E63D9100450A7E /* MatchesEndpoints.swift */; };
+		8586F82329E63F0C00450A7E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8586F82229E63F0C00450A7E /* Constants.swift */; };
 		85C9F97129E4AF0E00675948 /* English_Premier_LeagueApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C9F97029E4AF0E00675948 /* English_Premier_LeagueApp.swift */; };
 		85C9F97329E4AF0E00675948 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C9F97229E4AF0E00675948 /* ContentView.swift */; };
 		85C9F97529E4AF1000675948 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85C9F97429E4AF1000675948 /* Assets.xcassets */; };
@@ -42,6 +45,9 @@
 		8586F81429E5FF1300450A7E /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		8586F81629E5FF3800450A7E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		8586F81929E5FFA700450A7E /* Codable+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Extentions.swift"; sourceTree = "<group>"; };
+		8586F81D29E63D0100450A7E /* MatchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesService.swift; sourceTree = "<group>"; };
+		8586F81F29E63D9100450A7E /* MatchesEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesEndpoints.swift; sourceTree = "<group>"; };
+		8586F82229E63F0C00450A7E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		85C9F96D29E4AF0E00675948 /* English Premier League.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "English Premier League.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C9F97029E4AF0E00675948 /* English_Premier_LeagueApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = English_Premier_LeagueApp.swift; sourceTree = "<group>"; };
 		85C9F97229E4AF0E00675948 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +103,32 @@
 			path = Extentions;
 			sourceTree = "<group>";
 		};
+		8586F81B29E628D400450A7E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8586F82129E63EF500450A7E /* Utilities */,
+				8586F81C29E628E400450A7E /* Matches */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		8586F81C29E628E400450A7E /* Matches */ = {
+			isa = PBXGroup;
+			children = (
+				8586F81D29E63D0100450A7E /* MatchesService.swift */,
+				8586F81F29E63D9100450A7E /* MatchesEndpoints.swift */,
+			);
+			path = Matches;
+			sourceTree = "<group>";
+		};
+		8586F82129E63EF500450A7E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8586F82229E63F0C00450A7E /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		85C9F96429E4AF0E00675948 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +152,7 @@
 		85C9F96F29E4AF0E00675948 /* English Premier League */ = {
 			isa = PBXGroup;
 			children = (
+				8586F81B29E628D400450A7E /* Modules */,
 				8586F81829E5FF8800450A7E /* Extentions */,
 				8586F81129E5F64300450A7E /* NetworkLayer */,
 				85C9F97029E4AF0E00675948 /* English_Premier_LeagueApp.swift */,
@@ -287,10 +320,13 @@
 			files = (
 				8586F81329E5F9E200450A7E /* NetworkManger.swift in Sources */,
 				85C9F97329E4AF0E00675948 /* ContentView.swift in Sources */,
+				8586F82029E63D9100450A7E /* MatchesEndpoints.swift in Sources */,
 				8586F81A29E5FFA700450A7E /* Codable+Extentions.swift in Sources */,
+				8586F81E29E63D0100450A7E /* MatchesService.swift in Sources */,
 				8586F81529E5FF1300450A7E /* NetworkRequest.swift in Sources */,
 				85C9F97129E4AF0E00675948 /* English_Premier_LeagueApp.swift in Sources */,
 				8586F81729E5FF3800450A7E /* NetworkError.swift in Sources */,
+				8586F82329E63F0C00450A7E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

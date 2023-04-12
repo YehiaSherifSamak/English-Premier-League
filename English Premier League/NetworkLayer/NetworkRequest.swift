@@ -7,6 +7,21 @@
 
 import Foundation
 
+protocol Request {
+    var url: String { get}
+    var headers: [String: String]? { get }
+    var body: Data? { get }
+    var requestTimeOut: Float? { get }
+    var httpMethod: HTTPMethod { get }
+    
+    func createRequest() -> NetworkRequest
+}
+
+extension Request {
+    func createRequest() -> NetworkRequest {
+        return NetworkRequest(url: "\(Constants.baseURL)\(self.url)", headers: self.headers, reqBody: self.body, reqTimeout: self.requestTimeOut, httpMethod: self.httpMethod)
+    }
+}
 
 public struct NetworkRequest {
     let url: String
