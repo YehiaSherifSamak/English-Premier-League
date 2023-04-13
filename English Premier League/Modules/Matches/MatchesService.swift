@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import Combine
 
 protocol MatchesServiceable {
-    func getMatches()
+    func getMatches()-> AnyPublisher<MatchesAPIModel, NetworkError>
 }
 
 class MatchesService: MatchesServiceable {
@@ -18,7 +19,8 @@ class MatchesService: MatchesServiceable {
         self.networkRequest = networkRequest
     }
     
-    func getMatches() {
-        
+    func getMatches()-> AnyPublisher<MatchesAPIModel, NetworkError>{
+        let request = MatchesEndpoints.getMatches.createRequest()
+        return networkRequest.request(request)
     }
 }

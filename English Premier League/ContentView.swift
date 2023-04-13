@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    let viewModel = MatchesViewModel()
     var body: some View {
         VStack {
             Image(systemName: "globe")

@@ -20,7 +20,7 @@ struct CompetitionAPIModel: Codable {
     let id: Int
     let area: AreaAPIModel
     let name, code, plan: String
-    let lastUpdated: Date
+    let lastUpdated: String
 }
 
 // MARK: - Area
@@ -61,11 +61,11 @@ struct FiltersAPIModel: Codable {
 struct MatchAPIModel: Codable {
     let id: Int
     let season: SeasonAPIModel
-    let utcDate: Date
+    let utcDate: String
     let status: StatusAPIModel
     let matchday: Int
     let stage: Stage
-    let lastUpdated: Date
+    let lastUpdated: String
     let odds: OddsAPIModel
     let score: Score
     let homeTeam, awayTeam: AreaAPIModel
