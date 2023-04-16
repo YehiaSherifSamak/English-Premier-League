@@ -12,6 +12,19 @@ struct MatchModel {
     let awayTeamName: String
     let result: ResultModel?
     let date: Date?
+    var time: String {
+        if let date {
+            return  Converter().convertToTimeString(date: date)
+        }
+        return "Unknown Time"
+    }
+    
+    var day: String {
+        if let date {
+            return Converter().convertToDateString(date: date)
+        }
+        return "UnKnown Date"
+    }
     
     init(homeTeam: String, awayTeam: String, result: ResultModel?, date: Date?) {
         self.homeTeamName = homeTeam
@@ -23,7 +36,7 @@ struct MatchModel {
     init(matchAPIModel: MatchAPIModel) {
         self.homeTeamName = matchAPIModel.homeTeam.name.rawValue
         self.awayTeamName = matchAPIModel.awayTeam.name.rawValue
-        self.date = Date().convert(string: matchAPIModel.utcDate)
+        self.date = Converter().convert(string: matchAPIModel.utcDate)
         
         if let homeScore = matchAPIModel.score.fullTime.homeTeam,
            let awayScore = matchAPIModel.score.fullTime.awayTeam {

@@ -19,7 +19,7 @@
 		85B607BF29E8991D0070CE51 /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B607BE29E8991D0070CE51 /* MatchView.swift */; };
 		85B607C129E89C100070CE51 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B607C029E89C100070CE51 /* CustomColor.swift */; };
 		85B607C729E8EC940070CE51 /* MatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B607C629E8EC940070CE51 /* MatchModel.swift */; };
-		85B607C929EB7CE90070CE51 /* Date+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B607C829EB7CE90070CE51 /* Date+Extention.swift */; };
+		85B607CB29EB81E40070CE51 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B607CA29EB81E40070CE51 /* Converter.swift */; };
 		85C9F97129E4AF0E00675948 /* English_Premier_LeagueApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C9F97029E4AF0E00675948 /* English_Premier_LeagueApp.swift */; };
 		85C9F97329E4AF0E00675948 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C9F97229E4AF0E00675948 /* ContentView.swift */; };
 		85C9F97529E4AF1000675948 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85C9F97429E4AF1000675948 /* Assets.xcassets */; };
@@ -59,7 +59,7 @@
 		85B607BE29E8991D0070CE51 /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
 		85B607C029E89C100070CE51 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		85B607C629E8EC940070CE51 /* MatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchModel.swift; sourceTree = "<group>"; };
-		85B607C829EB7CE90070CE51 /* Date+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extention.swift"; sourceTree = "<group>"; };
+		85B607CA29EB81E40070CE51 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		85C9F96D29E4AF0E00675948 /* English Premier League.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "English Premier League.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C9F97029E4AF0E00675948 /* English_Premier_LeagueApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = English_Premier_LeagueApp.swift; sourceTree = "<group>"; };
 		85C9F97229E4AF0E00675948 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,8 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				8586F81929E5FFA700450A7E /* Codable+Extention.swift */,
-				85B607C029E89C100070CE51 /* CustomColor.swift */,
-				85B607C829EB7CE90070CE51 /* Date+Extention.swift */,
+				85B607CA29EB81E40070CE51 /* Converter.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -143,6 +142,7 @@
 			children = (
 				8586F81829E5FF8800450A7E /* Extentions */,
 				8586F82229E63F0C00450A7E /* Constants.swift */,
+				85B607C029E89C100070CE51 /* CustomColor.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -342,12 +342,12 @@
 			files = (
 				8586F81329E5F9E200450A7E /* NetworkManger.swift in Sources */,
 				85B607C729E8EC940070CE51 /* MatchModel.swift in Sources */,
+				85B607CB29EB81E40070CE51 /* Converter.swift in Sources */,
 				85C9F97329E4AF0E00675948 /* ContentView.swift in Sources */,
 				8586F82529E64A2600450A7E /* MatchesAPIModel.swift in Sources */,
 				8586F82029E63D9100450A7E /* MatchesEndpoints.swift in Sources */,
 				8586F81A29E5FFA700450A7E /* Codable+Extention.swift in Sources */,
 				8586F81E29E63D0100450A7E /* MatchesService.swift in Sources */,
-				85B607C929EB7CE90070CE51 /* Date+Extention.swift in Sources */,
 				8586F81529E5FF1300450A7E /* NetworkRequest.swift in Sources */,
 				85C9F97129E4AF0E00675948 /* English_Premier_LeagueApp.swift in Sources */,
 				85B607C129E89C100070CE51 /* CustomColor.swift in Sources */,
