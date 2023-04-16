@@ -8,6 +8,6 @@
 import SwiftUI
 
 struct CustomColor {
-    static let background = Color("backgroundColor")
-    static let cellBackground = Color("cellBackground")
+    static let background: Color = Color("backgroundColor")
+    static let cellBackground: Color = Color("cellBackground")
 }

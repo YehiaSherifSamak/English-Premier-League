@@ -12,22 +12,27 @@ struct MatchView: View {
     var body: some View {
         HStack {
             Text(match.homeTeamName)
-                .foregroundColor(.white)
+                //.foregroundColor(.white)
                 .fontWeight(.bold)
                 .font(.title2)
             Text(match.shownData)
-                .foregroundColor(.white)
+              //  .foregroundColor(.white)
                 .font(.title3)
                 .fontWeight(.medium)
             Text(match.awayTeamName)
-                .foregroundColor(.white)
+               // .foregroundColor(.white)
                 .bold()
                 .font(.title2)
+            Button {
+                print("tapped")
+            } label: {
+                Image(systemName: "star")
+                    .tint(.black)
+            }
         }
         .padding()
-        .background(CustomColor.cellBackground)
         .cornerRadius(12)
-            
+        
     }
 }
 
