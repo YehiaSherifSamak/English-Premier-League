@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct MatchModel {
+struct MatchModel: Identifiable {
+    public let id: String
     public let homeTeamName: String
     public let awayTeamName: String
     public let date: Date?
@@ -34,7 +35,8 @@ struct MatchModel {
         return time
     }
     
-    init(homeTeam: String, awayTeam: String, result: ResultModel?, date: Date?) {
+    init(id: String, homeTeam: String, awayTeam: String, result: ResultModel?, date: Date?) {
+        self.id = id
         self.homeTeamName = homeTeam
         self.awayTeamName = awayTeam
         self.result = result
@@ -42,6 +44,7 @@ struct MatchModel {
     }
     
     init(matchAPIModel: MatchAPIModel) {
+        self.id = "\(matchAPIModel.id)"
         self.homeTeamName = matchAPIModel.homeTeam.name.rawValue
         self.awayTeamName = matchAPIModel.awayTeam.name.rawValue
         self.date = Converter().convert(string: matchAPIModel.utcDate)

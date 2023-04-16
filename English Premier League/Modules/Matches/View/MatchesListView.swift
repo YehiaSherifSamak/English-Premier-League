@@ -8,17 +8,19 @@
 import SwiftUI
 
 struct MatchesListView: View {
-    // let viewModel = MatchesViewModel()
-    let match = MatchModel(homeTeam: "Al Ahly", awayTeam: "Al Zamalak", result: ResultModel(homeTeamScore: 2, awayTeamScore: 2), date: Date())
+    @StateObject var viewModel = MatchesViewModel(matchesService: MatchesService(networkRequest: NetworkManger()))
+    
     
     var body: some View {
         NavigationStack {
-            List{
+            List(viewModel.matches){ match in
                 MatchView(match: match)
-                MatchView(match: match)
-            }
+        }
             
             .navigationTitle("Matches")
+        }
+        .onAppear{
+            viewModel.requestMatches()
         }
         
         

@@ -17,7 +17,7 @@ struct MatchView: View {
                 .font(.title2)
             Text(match.shownData)
               //  .foregroundColor(.white)
-                .font(.title3)
+                .font(.title2)
                 .fontWeight(.medium)
             Text(match.awayTeamName)
                // .foregroundColor(.white)
@@ -38,7 +38,7 @@ struct MatchView: View {
 
 struct MatchView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchView(match: MatchModel(homeTeam: "Al Ahly", awayTeam: "Al Zamalak", result: ResultModel(homeTeamScore: 2, awayTeamScore: 2), date: Date()))
+        MatchView(match: MatchModel(id: "jn", homeTeam: "Al Ahly", awayTeam: "Al Zamalak", result: ResultModel(homeTeamScore: 2, awayTeamScore: 2), date: Date()))
            
     }
 }
