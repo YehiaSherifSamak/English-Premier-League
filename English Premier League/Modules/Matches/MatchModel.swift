@@ -8,22 +8,30 @@
 import Foundation
 
 struct MatchModel {
-    let homeTeamName: String
-    let awayTeamName: String
-    let result: ResultModel?
-    let date: Date?
-    var time: String {
+    public let homeTeamName: String
+    public let awayTeamName: String
+    public let date: Date?
+    
+    private let result: ResultModel?
+    private var time: String {
         if let date {
             return  Converter().convertToTimeString(date: date)
         }
         return "Unknown Time"
     }
     
-    var day: String {
+    public var dateString: String {
         if let date {
             return Converter().convertToDateString(date: date)
         }
         return "UnKnown Date"
+    }
+    
+    public var shownData: String {
+        if let result {
+            return result.toString()
+        }
+        return time
     }
     
     init(homeTeam: String, awayTeam: String, result: ResultModel?, date: Date?) {
@@ -51,4 +59,8 @@ struct MatchModel {
 struct ResultModel {
     let homeTeamScore: Int
     let awayTeamScore: Int
+    
+    func toString()-> String {
+        return "\(homeTeamScore) - \(awayTeamScore)"
+    }
 }
