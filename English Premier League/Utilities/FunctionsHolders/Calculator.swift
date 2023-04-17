@@ -20,6 +20,10 @@ struct Calculator {
         dateFormatter.dateFormat = "d MMM y"
         if let firstDate = dateFormatter.date(from:date1) , let secondDate = dateFormatter.date(from: date2) {
             return firstDate < secondDate
+        } else if date1 == "Today" && date2 == "Tomorrow" {
+            return true
+        } else if date2 == "Today" && date1 == "Tomorrow" {
+            return false
         }
         return true
     }

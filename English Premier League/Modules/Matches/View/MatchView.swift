@@ -14,7 +14,7 @@ struct MatchView: View {
             Text(match.homeTeamName)
                 //.foregroundColor(.white)
                 .fontWeight(.bold)
-                .font(.title2)
+                .font(.title3)
             Text(match.shownData)
               //  .foregroundColor(.white)
                 .font(.title2)
@@ -22,7 +22,7 @@ struct MatchView: View {
             Text(match.awayTeamName)
                // .foregroundColor(.white)
                 .bold()
-                .font(.title2)
+                .font(.title3)
             Button {
                 print("tapped")
             } label: {
@@ -39,6 +39,5 @@ struct MatchView: View {
 struct MatchView_Previews: PreviewProvider {
     static var previews: some View {
         MatchView(match: MatchModel(id: "jn", homeTeam: "Al Ahly", awayTeam: "Al Zamalak", result: ResultModel(homeTeamScore: 2, awayTeamScore: 2), date: Date()))
-           
     }
 }

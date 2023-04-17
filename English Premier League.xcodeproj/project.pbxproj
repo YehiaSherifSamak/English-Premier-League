@@ -141,12 +141,10 @@
 		8586F82129E63EF500450A7E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				85B607D629ECDA190070CE51 /* FunctionsHolders */,
+				85B607D529ECDA0C0070CE51 /* ValueHolders */,
 				85B607CC29EBBD0D0070CE51 /* Views */,
 				8586F81829E5FF8800450A7E /* Extentions */,
-				8586F82229E63F0C00450A7E /* Constants.swift */,
-				85B607C029E89C100070CE51 /* CustomColor.swift */,
-				85B607CA29EB81E40070CE51 /* Converter.swift */,
-				85B607D329ECD7C70070CE51 /* Calculator.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -192,6 +190,24 @@
 				8586F82429E64A2600450A7E /* MatchesAPIModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		85B607D529ECDA0C0070CE51 /* ValueHolders */ = {
+			isa = PBXGroup;
+			children = (
+				8586F82229E63F0C00450A7E /* Constants.swift */,
+				85B607C029E89C100070CE51 /* CustomColor.swift */,
+			);
+			path = ValueHolders;
+			sourceTree = "<group>";
+		};
+		85B607D629ECDA190070CE51 /* FunctionsHolders */ = {
+			isa = PBXGroup;
+			children = (
+				85B607CA29EB81E40070CE51 /* Converter.swift */,
+				85B607D329ECD7C70070CE51 /* Calculator.swift */,
+			);
+			path = FunctionsHolders;
 			sourceTree = "<group>";
 		};
 		85C9F96429E4AF0E00675948 = {
