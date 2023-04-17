@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 
-class MatchesViewModel: ObservableObject {
+class MatchesViewModel: BaseViewModel {
     @Published var matches: [String: [MatchModel]] = [:]
     let favorites: FavoriteMatches
     var showOnlyFavorties: Bool = false {
@@ -33,13 +33,16 @@ class MatchesViewModel: ObservableObject {
 
 extension MatchesViewModel {
     func requestMatches() {
+        isLoading = true
         canceler =  matchesService
             .getMatches()
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { complation in
-                print("complation")
+            .sink(receiveCompletion: { [weak self] complation in
+                guard let self else { return }
+                self.isLoading = false
             }, receiveValue: { [weak self] matchesAPIModel in
                 guard let self else { return }
+                self.isLoading = false
                 self.matchesAPIModel = matchesAPIModel
                 self.matches = self.divideMatchesByDay(matches: self.convert(matchesAPIModel: matchesAPIModel))
             })
