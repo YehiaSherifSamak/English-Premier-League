@@ -31,6 +31,8 @@
 		85C9F98E29E4AF1000675948 /* English_Premier_LeagueUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C9F98D29E4AF1000675948 /* English_Premier_LeagueUITestsLaunchTests.swift */; };
 		85E91BF929ED2DE400D0D555 /* MatchesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E91BF829ED2DE400D0D555 /* MatchesConfigurator.swift */; };
 		85E91BFC29ED387F00D0D555 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E91BFB29ED387F00D0D555 /* BaseViewModel.swift */; };
+		85E91C0029ED3E0C00D0D555 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E91BFF29ED3E0C00D0D555 /* CalculatorTests.swift */; };
+		85E91C0229ED3F4100D0D555 /* ConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E91C0129ED3F4100D0D555 /* ConverterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		85C9F98D29E4AF1000675948 /* English_Premier_LeagueUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = English_Premier_LeagueUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		85E91BF829ED2DE400D0D555 /* MatchesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesConfigurator.swift; sourceTree = "<group>"; };
 		85E91BFB29ED387F00D0D555 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		85E91BFF29ED3E0C00D0D555 /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
+		85E91C0129ED3F4100D0D555 /* ConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +264,7 @@
 		85C9F98029E4AF1000675948 /* English Premier LeagueTests */ = {
 			isa = PBXGroup;
 			children = (
+				85E91BFD29ED3D7A00D0D555 /* Tests */,
 				85C9F98129E4AF1000675948 /* English_Premier_LeagueTests.swift */,
 			);
 			path = "English Premier LeagueTests";
@@ -288,6 +293,15 @@
 				85E91BFB29ED387F00D0D555 /* BaseViewModel.swift */,
 			);
 			path = Bases;
+			sourceTree = "<group>";
+		};
+		85E91BFD29ED3D7A00D0D555 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				85E91BFF29ED3E0C00D0D555 /* CalculatorTests.swift */,
+				85E91C0129ED3F4100D0D555 /* ConverterTests.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -450,7 +464,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85E91C0229ED3F4100D0D555 /* ConverterTests.swift in Sources */,
 				85C9F98229E4AF1000675948 /* English_Premier_LeagueTests.swift in Sources */,
+				85E91C0029ED3E0C00D0D555 /* CalculatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
