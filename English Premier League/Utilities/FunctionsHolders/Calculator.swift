@@ -17,7 +17,7 @@ struct Calculator {
     
     func compareStringDates(_ date1: String, _ date2: String) -> Bool {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "d MMM y"
+        dateFormatter.dateFormat = Constants.shortDateFormate
        
         if let firstDate = dateFormatter.date(from:date1), let secondDate = dateFormatter.date(from: date2) {
             return firstDate < secondDate
