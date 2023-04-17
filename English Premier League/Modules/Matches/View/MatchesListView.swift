@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MatchesListView: View {
-    @StateObject var viewModel = MatchesViewModel(matchesService: MatchesService(networkRequest: NetworkManger()), favorites: FavoriteMatches())
+    @StateObject var viewModel: MatchesViewModel
     
     
     
@@ -42,7 +42,7 @@ struct MatchesListView: View {
 
 struct MatchesListView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchesListView()
+        MatchesListView(viewModel: MatchesViewModel(matchesService: MatchesService(networkRequest: NetworkManger()), favorites: FavoriteMatches()))
         
     }
 }

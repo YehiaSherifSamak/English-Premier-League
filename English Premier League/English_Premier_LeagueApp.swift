@@ -11,7 +11,7 @@ import SwiftUI
 struct English_Premier_LeagueApp: App {
     var body: some Scene {
         WindowGroup {
-            MatchesListView()
+            MatchesConfigurator.matches.view
         }
     }
 }

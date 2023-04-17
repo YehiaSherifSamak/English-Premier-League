@@ -29,6 +29,8 @@
 		85C9F98229E4AF1000675948 /* English_Premier_LeagueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C9F98129E4AF1000675948 /* English_Premier_LeagueTests.swift */; };
 		85C9F98C29E4AF1000675948 /* English_Premier_LeagueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C9F98B29E4AF1000675948 /* English_Premier_LeagueUITests.swift */; };
 		85C9F98E29E4AF1000675948 /* English_Premier_LeagueUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C9F98D29E4AF1000675948 /* English_Premier_LeagueUITestsLaunchTests.swift */; };
+		85E91BF929ED2DE400D0D555 /* MatchesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E91BF829ED2DE400D0D555 /* MatchesConfigurator.swift */; };
+		85E91BFC29ED387F00D0D555 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E91BFB29ED387F00D0D555 /* BaseViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		85C9F98729E4AF1000675948 /* English Premier LeagueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "English Premier LeagueUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C9F98B29E4AF1000675948 /* English_Premier_LeagueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = English_Premier_LeagueUITests.swift; sourceTree = "<group>"; };
 		85C9F98D29E4AF1000675948 /* English_Premier_LeagueUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = English_Premier_LeagueUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		85E91BF829ED2DE400D0D555 /* MatchesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesConfigurator.swift; sourceTree = "<group>"; };
+		85E91BFB29ED387F00D0D555 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,7 @@
 		8586F81C29E628E400450A7E /* Matches */ = {
 			isa = PBXGroup;
 			children = (
+				85E91BF729ED2DBD00D0D555 /* Configurator */,
 				85B607D229EC2F300070CE51 /* Models */,
 				85B607D129EC2F1E0070CE51 /* Service */,
 				85B607D029EC2F110070CE51 /* ViewModel */,
@@ -141,6 +146,7 @@
 		8586F82129E63EF500450A7E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				85E91BFA29ED383000D0D555 /* Bases */,
 				85B607D629ECDA190070CE51 /* FunctionsHolders */,
 				85B607D529ECDA0C0070CE51 /* ValueHolders */,
 				85B607CC29EBBD0D0070CE51 /* Views */,
@@ -266,6 +272,22 @@
 				85C9F98D29E4AF1000675948 /* English_Premier_LeagueUITestsLaunchTests.swift */,
 			);
 			path = "English Premier LeagueUITests";
+			sourceTree = "<group>";
+		};
+		85E91BF729ED2DBD00D0D555 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				85E91BF829ED2DE400D0D555 /* MatchesConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		85E91BFA29ED383000D0D555 /* Bases */ = {
+			isa = PBXGroup;
+			children = (
+				85E91BFB29ED387F00D0D555 /* BaseViewModel.swift */,
+			);
+			path = Bases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,9 +434,11 @@
 				85B607D829ED15120070CE51 /* FavoriteMatches.swift in Sources */,
 				85B607D429ECD7C70070CE51 /* Calculator.swift in Sources */,
 				8586F81A29E5FFA700450A7E /* Codable+Extention.swift in Sources */,
+				85E91BF929ED2DE400D0D555 /* MatchesConfigurator.swift in Sources */,
 				8586F81E29E63D0100450A7E /* MatchesService.swift in Sources */,
 				8586F81529E5FF1300450A7E /* NetworkRequest.swift in Sources */,
 				85C9F97129E4AF0E00675948 /* English_Premier_LeagueApp.swift in Sources */,
+				85E91BFC29ED387F00D0D555 /* BaseViewModel.swift in Sources */,
 				8586F81729E5FF3800450A7E /* NetworkError.swift in Sources */,
 				8586F82329E63F0C00450A7E /* Constants.swift in Sources */,
 				85B607BF29E8991D0070CE51 /* MatchView.swift in Sources */,
