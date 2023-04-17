@@ -21,6 +21,7 @@
 		85B607C729E8EC940070CE51 /* MatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B607C629E8EC940070CE51 /* MatchModel.swift */; };
 		85B607CB29EB81E40070CE51 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B607CA29EB81E40070CE51 /* Converter.swift */; };
 		85B607CE29EBBD290070CE51 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B607CD29EBBD290070CE51 /* LoadingView.swift */; };
+		85B607D429ECD7C70070CE51 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B607D329ECD7C70070CE51 /* Calculator.swift */; };
 		85C9F97129E4AF0E00675948 /* English_Premier_LeagueApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C9F97029E4AF0E00675948 /* English_Premier_LeagueApp.swift */; };
 		85C9F97329E4AF0E00675948 /* MatchesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C9F97229E4AF0E00675948 /* MatchesListView.swift */; };
 		85C9F97529E4AF1000675948 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85C9F97429E4AF1000675948 /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		85B607C629E8EC940070CE51 /* MatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchModel.swift; sourceTree = "<group>"; };
 		85B607CA29EB81E40070CE51 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		85B607CD29EBBD290070CE51 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		85B607D329ECD7C70070CE51 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		85C9F96D29E4AF0E00675948 /* English Premier League.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "English Premier League.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C9F97029E4AF0E00675948 /* English_Premier_LeagueApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = English_Premier_LeagueApp.swift; sourceTree = "<group>"; };
 		85C9F97229E4AF0E00675948 /* MatchesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesListView.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				8586F82229E63F0C00450A7E /* Constants.swift */,
 				85B607C029E89C100070CE51 /* CustomColor.swift */,
 				85B607CA29EB81E40070CE51 /* Converter.swift */,
+				85B607D329ECD7C70070CE51 /* Calculator.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				8586F82529E64A2600450A7E /* MatchesAPIModel.swift in Sources */,
 				85B607CE29EBBD290070CE51 /* LoadingView.swift in Sources */,
 				8586F82029E63D9100450A7E /* MatchesEndpoints.swift in Sources */,
+				85B607D429ECD7C70070CE51 /* Calculator.swift in Sources */,
 				8586F81A29E5FFA700450A7E /* Codable+Extention.swift in Sources */,
 				8586F81E29E63D0100450A7E /* MatchesService.swift in Sources */,
 				8586F81529E5FF1300450A7E /* NetworkRequest.swift in Sources */,

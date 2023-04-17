@@ -13,10 +13,17 @@ struct MatchesListView: View {
     
     var body: some View {
         NavigationStack {
-            List(viewModel.matches){ match in
-                MatchView(match: match)
-        }
-            
+            List {
+                ForEach(viewModel.diviedMatches.sorted(by: { dic1, dic2 in
+                    return Calculator().compareStringDates(dic1.key, dic2.key)
+                }), id: \.key) { key, value in
+                    Section(key) {
+                        ForEach(value) { match in
+                            MatchView(match: match)
+                        }
+                    }
+                }
+            }
             .navigationTitle("Matches")
         }
         .onAppear{

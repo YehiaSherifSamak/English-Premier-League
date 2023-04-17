@@ -11,6 +11,7 @@ import Combine
 
 class MatchesViewModel: ObservableObject {
     @Published var matches: [MatchModel] = []
+    @Published var diviedMatches: [String: [MatchModel]] = [:]
     
     let matchesService: MatchesServiceable
     var canceler: Cancellable?
@@ -30,7 +31,8 @@ extension MatchesViewModel {
                 print("complation")
             }, receiveValue: { [weak self] matchesAPIModel in
                 guard let self else { return }
-                self.matches.append(contentsOf: self.convert(matchesAPIModel: matchesAPIModel))
+                //self.matches.append(contentsOf: self.convert(matchesAPIModel: matchesAPIModel))
+                self.diviedMatches = self.divideMatchesByDay(matches: self.convert(matchesAPIModel: matchesAPIModel))
             })
     }
     
@@ -41,11 +43,15 @@ extension MatchesViewModel {
             matches.append(MatchModel(matchAPIModel: match))
         }
         return matches.filter { match in
-            return Converter().isThisDayNotInThePast(date: match.date ?? Date())
+            return Calculator().isThisDayNotInThePast(date: match.date ?? Date())
         }
     }
     
-   
+    func divideMatchesByDay(matches: [MatchModel]) -> [String: [MatchModel]] {
+        let dividedMatches = Dictionary(grouping: matches) { $0.dateString }
+        
+        return dividedMatches
+    }
     
     
 }
