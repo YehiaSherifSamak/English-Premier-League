@@ -40,6 +40,12 @@ extension MatchesViewModel {
         for match in matchesAPIModel.matches {
             matches.append(MatchModel(matchAPIModel: match))
         }
-        return matches
+        return matches.filter { match in
+            return Converter().isThisDayNotInThePast(date: match.date ?? Date())
+        }
     }
+    
+   
+    
+    
 }

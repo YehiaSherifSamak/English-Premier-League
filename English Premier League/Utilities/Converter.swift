@@ -8,6 +8,14 @@
 import Foundation
 
 struct Converter {
+    
+    func isThisDayNotInThePast(date: Date) -> Bool{
+        var calender = Calendar.current
+        calender.timeZone = TimeZone.current
+        let result = calender.compare(date, to: Date(), toGranularity: .day)
+        return result == .orderedSame || result == .orderedDescending
+    }
+    
     func convert(string: String)-> Date? {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"

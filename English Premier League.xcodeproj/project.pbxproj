@@ -113,7 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				8586F81929E5FFA700450A7E /* Codable+Extention.swift */,
-				85B607CA29EB81E40070CE51 /* Converter.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -144,6 +143,7 @@
 				8586F81829E5FF8800450A7E /* Extentions */,
 				8586F82229E63F0C00450A7E /* Constants.swift */,
 				85B607C029E89C100070CE51 /* CustomColor.swift */,
+				85B607CA29EB81E40070CE51 /* Converter.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
