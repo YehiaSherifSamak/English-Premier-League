@@ -10,14 +10,23 @@ import Combine
 
 
 class MatchesViewModel: ObservableObject {
-    @Published var matches: [MatchModel] = []
-    @Published var diviedMatches: [String: [MatchModel]] = [:]
+    @Published var matches: [String: [MatchModel]] = [:]
+    let favorites: FavoriteMatches
+    var showOnlyFavorties: Bool = false {
+        didSet {
+            guard let matchesAPIModel else { return }
+            matches = divideMatchesByDay(matches: convert(matchesAPIModel: matchesAPIModel))
+        }
+    }
     
-    let matchesService: MatchesServiceable
-    var canceler: Cancellable?
+    private let matchesService: MatchesServiceable
+    private var canceler: Cancellable?
+    private var matchesAPIModel: MatchesAPIModel?
     
-    init(matchesService: MatchesServiceable) {
+    
+    init(matchesService: MatchesServiceable, favorites: FavoriteMatches) {
         self.matchesService = matchesService
+        self.favorites = favorites
     }
     
 }
@@ -31,27 +40,37 @@ extension MatchesViewModel {
                 print("complation")
             }, receiveValue: { [weak self] matchesAPIModel in
                 guard let self else { return }
-                //self.matches.append(contentsOf: self.convert(matchesAPIModel: matchesAPIModel))
-                self.diviedMatches = self.divideMatchesByDay(matches: self.convert(matchesAPIModel: matchesAPIModel))
+                self.matchesAPIModel = matchesAPIModel
+                self.matches = self.divideMatchesByDay(matches: self.convert(matchesAPIModel: matchesAPIModel))
             })
     }
     
-    func convert(matchesAPIModel: MatchesAPIModel)->  [MatchModel] {
+    
+    private func convert(matchesAPIModel: MatchesAPIModel)->  [MatchModel] {
         var matches: [MatchModel] = []
         
         for match in matchesAPIModel.matches {
             matches.append(MatchModel(matchAPIModel: match))
         }
-        return matches.filter { match in
-            return Calculator().isThisDayNotInThePast(date: match.date ?? Date())
-        }
+        return showOnlyFavorties ? filterFavoirtes(matches: matches) : filterByDate(matches: matches)
     }
     
-    func divideMatchesByDay(matches: [MatchModel]) -> [String: [MatchModel]] {
+    private func divideMatchesByDay(matches: [MatchModel]) -> [String: [MatchModel]] {
         let dividedMatches = Dictionary(grouping: matches) { $0.dateString }
         
         return dividedMatches
     }
     
+    private func filterByDate(matches: [MatchModel]) -> [MatchModel] {
+        return matches.filter { match in
+            return Calculator().isThisDayNotInThePast(date: match.date ?? Date())
+        }
+    }
+    
+   private func filterFavoirtes(matches: [MatchModel]) -> [MatchModel] {
+        return matches.filter { match in
+            return favorites.contains(match)
+        }
+    }
     
 }

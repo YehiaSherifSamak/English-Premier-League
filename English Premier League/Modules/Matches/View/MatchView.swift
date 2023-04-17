@@ -9,24 +9,21 @@ import SwiftUI
 
 struct MatchView: View {
     @State var match: MatchModel
+    @StateObject var favaorties: FavoriteMatches
+    
     var body: some View {
-        HStack {
+        HStack(alignment: .center, spacing: 12.0) {
             Text(match.homeTeamName)
-                //.foregroundColor(.white)
                 .fontWeight(.bold)
-                .font(.title3)
             Text(match.shownData)
-              //  .foregroundColor(.white)
-                .font(.title2)
                 .fontWeight(.medium)
             Text(match.awayTeamName)
-               // .foregroundColor(.white)
-                .bold()
-                .font(.title3)
+                .fontWeight(.bold)
             Button {
-                print("tapped")
+                favaorties.update(match)
             } label: {
-                Image(systemName: "star")
+                favaorties.contains(match) ? Image(systemName: "star.fill")
+                    .tint(.red) : Image(systemName: "star")
                     .tint(.black)
             }
         }
@@ -38,6 +35,6 @@ struct MatchView: View {
 
 struct MatchView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchView(match: MatchModel(id: "jn", homeTeam: "Al Ahly", awayTeam: "Al Zamalak", result: ResultModel(homeTeamScore: 2, awayTeamScore: 2), date: Date()))
+        MatchView(match: MatchModel(id: "jn", homeTeam: "Al Ahly", awayTeam: "Al Zamalak", result: ResultModel(homeTeamScore: 2, awayTeamScore: 2), date: Date()), favaorties: FavoriteMatches())
     }
 }

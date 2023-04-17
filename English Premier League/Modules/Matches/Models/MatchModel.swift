@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct MatchModel: Identifiable {
+struct MatchModel: Identifiable, Hashable, Equatable {
+    
     public let id: String
     public let homeTeamName: String
     public let awayTeamName: String
@@ -55,6 +56,14 @@ struct MatchModel: Identifiable {
         } else {
             self.result = nil
         }
+    }
+    
+    static func == (lhs: MatchModel, rhs: MatchModel) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        return hasher.combine(id)
     }
 }
 

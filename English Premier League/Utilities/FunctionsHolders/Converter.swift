@@ -24,13 +24,7 @@ struct Converter {
         var result = ""
         let formatter = DateFormatter()
         formatter.dateFormat = "d MMM y"
-        if Calendar.current.isDateInToday(date) {
-            result = "Today"
-        } else if Calendar.current.isDateInTomorrow(date) {
-            result = "Tomorrow"
-        } else {
-            result = formatter.string(from: date)
-        }
+        result = formatter.string(from: date)
         return result
     }
 }

@@ -8,18 +8,24 @@
 import SwiftUI
 
 struct MatchesListView: View {
-    @StateObject var viewModel = MatchesViewModel(matchesService: MatchesService(networkRequest: NetworkManger()))
+    @StateObject var viewModel = MatchesViewModel(matchesService: MatchesService(networkRequest: NetworkManger()), favorites: FavoriteMatches())
+    
     
     
     var body: some View {
         NavigationStack {
+            Toggle(isOn: $viewModel.showOnlyFavorties) {
+                Text("Show favaroites only")
+            }
+            .padding()
+            
             List {
-                ForEach(viewModel.diviedMatches.sorted(by: { dic1, dic2 in
+                ForEach(viewModel.matches.sorted(by: { dic1, dic2 in
                     return Calculator().compareStringDates(dic1.key, dic2.key)
                 }), id: \.key) { key, value in
                     Section(key) {
                         ForEach(value) { match in
-                            MatchView(match: match)
+                            MatchView(match: match, favaorties: viewModel.favorites)
                         }
                     }
                 }
